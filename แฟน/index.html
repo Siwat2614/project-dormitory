@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="th">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ง้อแฟน 💖</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ffe6eb, #fff7fa);
+            font-family: "Noto Sans Thai", sans-serif;
+            text-align: center;
+            padding: 10px;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(90deg, #ff6b81, #ff9bb3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .message-box {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 380px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .message-box img {
+            width: 100px;
+            margin-bottom: 10px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .message-box p {
+            font-size: 18px;
+            color: #444;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .buttons {
+            position: relative;
+            width: 100%;
+            max-width: 380px;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 12px;
+        }
+
+        button {
+            border: none;
+            border-radius: 12px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(255, 107, 129, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        #loveBtn {
+            background: #ff6b81;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        #loveBtn:hover {
+            background: #e75970;
+        }
+
+        #noBtn {
+            background: #e0e0e0;
+            color: #555;
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #noBtn:hover {
+            background: #ccc;
+        }
+
+        .love-card {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 100;
+            width: 80%;
+            max-width: 360px;
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+
+        .love-card.show {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .love-card img {
+            width: 130px;
+            margin-bottom: 12px;
+            animation: bounce 2s infinite;
+        }
+
+        .love-card p {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ff4d6d;
+            margin: 0;
+            text-align: center;
+        }
+
+        #playMusicBtn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            background: #ff9bb3;
+            color: white;
+            box-shadow: 0 6px 15px rgba(255, 107, 129, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        #playMusicBtn:hover {
+            background: #ff7a99;
+        }
+
+        #musicProgress {
+            width: 80%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ขอโทษนะที่รัก 🥺💖</h1>
+
+    <div class="message-box">
+        <img src="https://i.pinimg.com/originals/f8/7c/41/f87c417e73bfd7aa5e0c2284096e52ef.gif" alt="sticker" />
+        <p>
+            เค้าขอโทษนะ <br />
+            เค้ารักคุณที่สุดเลย 💕<br />
+            ยกโทษให้เค้าเถอะนะครับ
+        </p>
+    </div>
+
+    <div class="buttons">
+        <button id="loveBtn">กดเพื่อรับรักจากผม 💌</button>
+        <button id="noBtn">ไม่ 😢</button>
+    </div>
+
+    <div class="love-card" id="loveCard">
+        <img src="https://i.pinimg.com/originals/80/03/90/8003906a3d3bc0ccad1e846bb209575a.gif" alt="love sticker">
+        <p>เค้ารักคุณที่สุดเลยยจุ๊ปๆๆๆๆ 💖</p>
+        <button id="playMusicBtn">🎵 เล่นเพลงให้คุณฟัง</button>
+        <input type="range" id="musicProgress" value="0" min="0" max="100">
+        <audio id="loveMusic" src="song.mp3"></audio>
+    </div>
+
+    <script>
+        const loveBtn = document.getElementById("loveBtn");
+        const noBtn = document.getElementById("noBtn");
+        const loveCard = document.getElementById("loveCard");
+        const playMusicBtn = document.getElementById("playMusicBtn");
+        const loveMusic = document.getElementById("loveMusic");
+        const musicProgress = document.getElementById("musicProgress");
+        const buttonsContainer = document.querySelector(".buttons");
+
+        // กดปุ่มรักโชว์การ์ด
+        loveBtn.addEventListener("click", () => {
+            loveCard.classList.add("show");
+        });
+
+        // ปุ่มเล่นเพลง
+        playMusicBtn.addEventListener("click", () => {
+            if (loveMusic.paused) {
+                loveMusic.play();
+                playMusicBtn.textContent = "⏸️ หยุดเพลง";
+            } else {
+                loveMusic.pause();
+                playMusicBtn.textContent = "🎵 เล่นเพลงให้คุณฟัง";
+            }
+        });
+
+        // อัพเดตแถบเพลง
+        loveMusic.addEventListener("timeupdate", () => {
+            const progress = (loveMusic.currentTime / loveMusic.duration) * 100;
+            musicProgress.value = progress || 0;
+        });
+
+        // กรอเพลง
+        musicProgress.addEventListener("input", () => {
+            loveMusic.currentTime = (musicProgress.value / 100) * loveMusic.duration;
+        });
+
+        // ปุ่ม "ไม่" วิ่งสุ่ม + หมุน
+        function moveButtonRandom() {
+            const parentRect = buttonsContainer.getBoundingClientRect();
+            const btnRect = noBtn.getBoundingClientRect();
+            const maxX = parentRect.width - btnRect.width;
+            const maxY = parentRect.height - btnRect.height;
+
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+            const randomRotate = Math.random() * 360;
+
+            noBtn.style.left = `${randomX}px`;
+            noBtn.style.top = `${randomY}px`;
+            noBtn.style.transform = `rotate(${randomRotate}deg) translateX(-50%)`;
+        }
+
+        noBtn.addEventListener("click", moveButtonRandom);
+    </script>
+</body>
+
+</html>
